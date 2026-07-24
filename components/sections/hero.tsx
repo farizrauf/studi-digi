@@ -9,52 +9,52 @@ import { Badge } from "@/components/ui/badge";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#F8FAFC] to-white pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#F8FAFC] to-white dark:from-slate-900 dark:to-slate-900 pt-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-[#2563EB]/5 to-[#06B6D4]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#06B6D4]/5 to-[#2563EB]/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-[#2563EB]/5 to-[#06B6D4]/5 rounded-full blur-3xl dark:from-[#2563EB]/10 dark:to-[#06B6D4]/10" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#06B6D4]/5 to-[#2563EB]/5 rounded-full blur-3xl dark:from-[#06B6D4]/10 dark:to-[#2563EB]/10" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <Badge variant="secondary" className="mb-6 inline-flex items-center gap-2">
+            <Badge variant="secondary" className="mb-6 inline-flex items-center gap-2 dark:bg-slate-800">
               <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
-              <span className="text-[#2563EB] font-medium">Digital Agency Terpercaya</span>
+              <span className="text-[#2563EB] dark:text-blue-400 font-medium">Digital Agency Terpercaya</span>
             </Badge>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] dark:text-white leading-tight mb-6">
               Website Profesional untuk{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">
                 UMKM, Restoran & Bisnis Anda
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-[#64748B] mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-lg sm:text-xl text-[#64748B] dark:text-slate-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               Kami membantu bisnis berkembang dengan website modern, cepat, SEO friendly, dan siap menghasilkan lebih banyak pelanggan.
             </p>
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mb-10">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 dark:bg-[#2563EB]/20 flex items-center justify-center">
                   <Check className="w-5 h-5 text-[#2563EB]" />
                 </div>
-                <span className="text-sm text-[#64748B]">100+ Proyek</span>
+                <span className="text-sm text-[#64748B] dark:text-slate-400">100+ Proyek</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/10 dark:bg-[#06B6D4]/20 flex items-center justify-center">
                   <Check className="w-5 h-5 text-[#06B6D4]" />
                 </div>
-                <span className="text-sm text-[#64748B]">98% Klien Puas</span>
+                <span className="text-sm text-[#64748B] dark:text-slate-400">98% Klien Puas</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-green-500/10 dark:bg-green-500/20 flex items-center justify-center">
                   <Check className="w-5 h-5 text-green-500" />
                 </div>
-                <span className="text-sm text-[#64748B]">Support 24/7</span>
+                <span className="text-sm text-[#64748B] dark:text-slate-400">Support 24/7</span>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ export function HeroSection() {
                   <ArrowRight className="w-5 h-5 ml-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="xl" className="w-full sm:w-auto">
+              <Button asChild variant="outline" size="xl" className="w-full sm:w-auto dark:bg-slate-800 dark:border-slate-700 dark:text-white dark:hover:bg-slate-700">
                 <Link href="/portfolio">
                   Lihat Portfolio
                 </Link>
@@ -86,25 +86,25 @@ export function HeroSection() {
               />
             </div>
             {/* Floating Cards */}
-            <div className="absolute -top-4 -left-4 sm:-left-8 bg-white rounded-xl p-4 shadow-xl shadow-[#2563EB]/10 animate-float">
+            <div className="absolute -top-4 -left-4 sm:-left-8 bg-white dark:bg-slate-800 rounded-xl p-4 shadow-xl shadow-[#2563EB]/10 animate-float">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
                   <span className="text-green-500 font-bold">+40%</span>
                 </div>
                 <div>
-                  <p className="text-xs text-[#64748B]">Peningkatan</p>
-                  <p className="text-sm font-semibold text-[#0F172A]">Penjualan</p>
+                  <p className="text-xs text-[#64748B] dark:text-slate-400">Peningkatan</p>
+                  <p className="text-sm font-semibold text-[#0F172A] dark:text-white">Penjualan</p>
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-4 -right-4 sm:-right-8 bg-white rounded-xl p-4 shadow-xl shadow-[#06B6D4]/10 animate-float-delayed">
+            <div className="absolute -bottom-4 -right-4 sm:-right-8 bg-white dark:bg-slate-800 rounded-xl p-4 shadow-xl shadow-[#06B6D4]/10 animate-float-delayed">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center">
                   <span className="text-[#2563EB] font-bold">100</span>
                 </div>
                 <div>
-                  <p className="text-xs text-[#64748B]">Skor</p>
-                  <p className="text-sm font-semibold text-[#0F172A]">Lighthouse</p>
+                  <p className="text-xs text-[#64748B] dark:text-slate-400">Skor</p>
+                  <p className="text-sm font-semibold text-[#0F172A] dark:text-white">Lighthouse</p>
                 </div>
               </div>
             </div>

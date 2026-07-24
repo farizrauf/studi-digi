@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
+import { MapPin, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,36 +22,35 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     const whatsappMessage = `Halo, saya ${formData.name}.\n\nPerusahaan: ${formData.company || "-"}\nLayanan yang dibutuhkan: ${formData.service || "-"}\n\nPesan:\n${formData.message}`;
     const whatsappUrl = `https://wa.me/${siteConfig.phone.replace("+", "")}?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <section className="py-20 lg:py-32 bg-white" id="contact">
+    <section className="py-20 lg:py-32 bg-white dark:bg-slate-900" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] dark:text-white mb-6">
             Siap untuk{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">
               Memulai?
             </span>
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#64748B] dark:text-slate-400 max-w-2xl mx-auto">
             Hubungi kami sekarang untuk konsultasi gratis dan diskusi tentang kebutuhan website Anda
           </p>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
           <AnimatedSection direction="left">
-            <Card>
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold text-[#0F172A] mb-6">
+            <Card className="dark:bg-slate-800 dark:border-slate-700">
+              <CardContent className="p-6 lg:p-8">
+                <h3 className="text-2xl font-semibold text-[#0F172A] dark:text-white mb-6">
                   Kirim Pesan
                 </h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Input
                       label="Nama Lengkap"
@@ -86,19 +85,19 @@ export function ContactSection() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-[#0F172A] mb-2">
+                    <label className="block text-sm font-medium text-[#0F172A] dark:text-white mb-2">
                       Layanan yang Dibutuhkan
                     </label>
                     <Select
                       value={formData.service}
                       onValueChange={(value) => setFormData({ ...formData, service: value })}
                     >
-                      <SelectTrigger>
+                      <SelectTrigger className="dark:bg-slate-700 dark:border-slate-600 dark:text-white">
                         <SelectValue placeholder="Pilih layanan" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="dark:bg-slate-800 dark:border-slate-700">
                         {services.map((service) => (
-                          <SelectItem key={service.title} value={service.title}>
+                          <SelectItem key={service.title} value={service.title} className="dark:text-white">
                             {service.title}
                           </SelectItem>
                         ))}
@@ -124,100 +123,106 @@ export function ContactSection() {
           {/* Contact Info */}
           <AnimatedSection direction="right" className="space-y-6">
             {/* Quick Contact */}
-            <Card>
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold text-[#0F172A] mb-6">
+            <Card className="dark:bg-slate-800 dark:border-slate-700">
+              <CardContent className="p-6 lg:p-8">
+                <h3 className="text-xl font-semibold text-[#0F172A] dark:text-white mb-5">
                   Hubungi Kami Langsung
                 </h3>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <a
                     href={`https://wa.me/${siteConfig.phone.replace("+", "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-green-50 hover:bg-green-100 transition-colors duration-200 group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors duration-200 group"
                   >
                     <div className="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">
                       <MessageCircle className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-medium text-[#0F172A] group-hover:text-green-600 transition-colors">
+                      <p className="font-medium text-[#0F172A] dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                         WhatsApp
                       </p>
-                      <p className="text-[#64748B]">{siteConfig.phone}</p>
+                      <p className="text-[#64748B] dark:text-slate-400">{siteConfig.phone}</p>
                     </div>
                   </a>
 
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-blue-50 hover:bg-blue-100 transition-colors duration-200 group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-200 group"
                   >
                     <div className="w-12 h-12 rounded-xl bg-[#2563EB] flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-medium text-[#0F172A] group-hover:text-[#2563EB] transition-colors">
+                      <p className="font-medium text-[#0F172A] dark:text-white group-hover:text-[#2563EB] dark:group-hover:text-blue-400 transition-colors">
                         Email
                       </p>
-                      <p className="text-[#64748B]">{siteConfig.email}</p>
+                      <p className="text-[#64748B] dark:text-slate-400">{siteConfig.email}</p>
                     </div>
                   </a>
 
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-[#06B6D4]/10">
-                    <div className="w-12 h-12 rounded-xl bg-[#06B6D4] flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-white" />
+                  <a
+                    href={siteConfig.socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-sky-50 dark:bg-sky-900/20 hover:bg-sky-100 dark:hover:bg-sky-900/30 transition-colors duration-200 group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-[#0A66C2] flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
                     </div>
                     <div>
-                      <p className="font-medium text-[#0F172A]">Telepon</p>
-                      <p className="text-[#64748B]">{siteConfig.phone}</p>
+                      <p className="font-medium text-[#0F172A] dark:text-white group-hover:text-[#0A66C2] dark:group-hover:text-sky-400 transition-colors">
+                        LinkedIn
+                      </p>
+                      <p className="text-[#64748B] dark:text-slate-400">Fariz Abdul Rauf</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Office Info */}
-            <Card>
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-[#2563EB]" />
+            {/* Office Info & Map */}
+            <Card className="dark:bg-slate-800 dark:border-slate-700 overflow-hidden">
+              <CardContent className="p-0">
+                <div className="p-6 lg:p-8">
+                  <div className="space-y-4 mb-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 dark:bg-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-[#2563EB]" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-[#0F172A] dark:text-white mb-1">Alamat</p>
+                        <p className="text-[#64748B] dark:text-slate-400">{siteConfig.address}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-medium text-[#0F172A] mb-1">Alamat</p>
-                      <p className="text-[#64748B]">{siteConfig.address}</p>
-                    </div>
-                  </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-5 h-5 text-[#06B6D4]" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#0F172A] mb-1">Jam Operasional</p>
-                      <p className="text-[#64748B]">{siteConfig.businessHours}</p>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/10 dark:bg-[#06B6D4]/20 flex items-center justify-center flex-shrink-0">
+                        <Clock className="w-5 h-5 text-[#06B6D4]" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-[#0F172A] dark:text-white mb-1">Jam Operasional</p>
+                        <p className="text-[#64748B] dark:text-slate-400">{siteConfig.businessHours}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
 
-            {/* Map Placeholder */}
-            <Card>
-              <CardContent className="p-0 overflow-hidden rounded-2xl">
-                <div className="aspect-video bg-[#F8FAFC] flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 text-[#2563EB] mx-auto mb-3" />
-                    <p className="text-[#64748B]">Jakarta Selatan, Indonesia</p>
-                    <a
-                      href="https://maps.google.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block mt-3 text-[#2563EB] font-medium hover:underline"
-                    >
-                      Buka di Google Maps
-                    </a>
-                  </div>
+                {/* Google Maps Embed */}
+                <div className="w-full h-64 lg:h-72">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.56253942854!2d106.68943162822967!3d-6.229728100524568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b109%3A0x6df2c20b5a1a3e3a!2sJakarta%20Selatan%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1699000000000!5m2!1sid!2sid"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="StudioDigital Location"
+                    className="grayscale-[50%] dark:grayscale-[80%]"
+                  />
                 </div>
               </CardContent>
             </Card>

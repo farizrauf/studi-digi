@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/ui/animated-section";
@@ -9,16 +8,16 @@ import { testimonials } from "@/lib/data";
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] dark:text-white mb-6">
             Apa Kata{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">
               Klien Kami
             </span>
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#64748B] dark:text-slate-400 max-w-2xl mx-auto">
             Kepercayaan klien adalah prioritas utama kami. Berikut testimoni dari klien yang telah bekerja sama dengan kami
           </p>
         </AnimatedSection>
@@ -26,9 +25,9 @@ export function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <AnimatedSection key={testimonial.id} delay={index * 100}>
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 dark:bg-slate-800 dark:border-slate-700">
                 <CardContent className="p-6">
-                  <Quote className="w-10 h-10 text-[#2563EB]/20 mb-4" />
+                  <Quote className="w-10 h-10 text-[#2563EB]/20 dark:text-blue-400/30 mb-4" />
 
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -39,7 +38,7 @@ export function TestimonialsSection() {
                     ))}
                   </div>
 
-                  <p className="text-[#64748B] mb-6 leading-relaxed">
+                  <p className="text-[#64748B] dark:text-slate-400 mb-6 leading-relaxed">
                     &quot;{testimonial.content}&quot;
                   </p>
 
@@ -48,8 +47,8 @@ export function TestimonialsSection() {
                       {testimonial.name.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-semibold text-[#0F172A]">{testimonial.name}</p>
-                      <p className="text-sm text-[#64748B]">
+                      <p className="font-semibold text-[#0F172A] dark:text-white">{testimonial.name}</p>
+                      <p className="text-sm text-[#64748B] dark:text-slate-400">
                         {testimonial.role}, {testimonial.company}
                       </p>
                     </div>

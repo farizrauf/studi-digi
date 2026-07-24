@@ -14,19 +14,19 @@ export function PortfolioSection() {
   const featuredProjects = projects.slice(0, 6);
 
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4">
+          <Badge variant="secondary" className="mb-4 dark:bg-slate-800 dark:text-white">
             Portfolio Kami
           </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] dark:text-white mb-6">
             Hasil Kerja yang{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">
               Membanggakan
             </span>
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#64748B] dark:text-slate-400 max-w-2xl mx-auto">
             Berbagai proyek successful yang telah kami kerjakan untuk klien dari berbagai industri
           </p>
         </AnimatedSection>
@@ -34,7 +34,7 @@ export function PortfolioSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {featuredProjects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 100}>
-              <Card className="overflow-hidden group">
+              <Card className="overflow-hidden group dark:bg-slate-800 dark:border-slate-700">
                 <CardContent className="p-0">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -58,7 +58,7 @@ export function PortfolioSection() {
                       <Button
                         variant="accent"
                         size="sm"
-                        className="bg-white text-[#0F172A] hover:bg-[#F8FAFC]"
+                        className="bg-white text-[#0F172A] hover:bg-[#F8FAFC] dark:bg-slate-100 dark:hover:bg-white"
                         asChild
                       >
                         <Link href={project.link || "#"} target="_blank">
@@ -69,13 +69,13 @@ export function PortfolioSection() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <Badge variant="outline" className="mb-3">
+                    <Badge variant="outline" className="mb-3 dark:border-slate-600 dark:text-slate-300">
                       {project.category}
                     </Badge>
-                    <h3 className="text-lg font-semibold text-[#0F172A] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
+                    <h3 className="text-lg font-semibold text-[#0F172A] dark:text-white mb-2 group-hover:text-[#2563EB] dark:group-hover:text-blue-400 transition-colors duration-200">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-[#64748B] line-clamp-2">
+                    <p className="text-sm text-[#64748B] dark:text-slate-400 line-clamp-2">
                       {project.description}
                     </p>
                   </div>

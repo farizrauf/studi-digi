@@ -84,6 +84,12 @@ export const services: Service[] = [
     description: "Integrasi lengkap dengan Google Business untuk meningkatkan visibilitas lokal bisnis Anda.",
     icon: "Globe",
     features: ["Google Maps", "Business Listing", "Review Management", "Local SEO"]
+  },
+  {
+    title: "Website Sekolah",
+    description: "Website sekolah profesional dengan sistem informasi lengkap untuk SD, SMP, SMA, dan universitas.",
+    icon: "GraduationCap",
+    features: ["Portal Siswa", "Portal Orang Tua", "Pendaftaran Online", "Pengumuman", "E-Learning", "Galeri Kegiatan"]
   }
 ];
 
@@ -406,7 +412,6 @@ export const navigationItems = [
   { label: "Tentang", href: "/about" },
   { label: "Layanan", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Harga", href: "/pricing" },
   { label: "Testimoni", href: "/testimonials" },
   { label: "FAQ", href: "/faq" },
   { label: "Kontak", href: "/contact" }
@@ -417,13 +422,13 @@ export const siteConfig = {
   description: "Website Profesional untuk UMKM, Restoran & Bisnis Anda. Kami membantu bisnis berkembang dengan website modern, cepat, dan SEO friendly.",
   url: "https://studiodigital.id",
   ogImage: "/og-image.jpg",
-  phone: "+6281234567890",
-  email: "hello@studiodigital.id",
-  address: "Jl. Sudirman No. 123, Jakarta Selatan, Indonesia",
+  phone: "+62895328976768",
+  email: "farizabdulr@gmail.com",
+  address: "Jakarta Selatan, Indonesia",
   businessHours: "Senin - Jumat: 09:00 - 18:00 WIB",
   socialLinks: {
     instagram: "https://instagram.com/studiodigital.id",
     facebook: "https://facebook.com/studiodigital.id",
-    linkedin: "https://linkedin.com/company/studiodigital"
+    linkedin: "https://www.linkedin.com/in/farizrauf/"
   }
 };
