@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ExternalLink, Filter } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,19 +23,19 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-[#F8FAFC] to-white">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-[#F8FAFC] to-white dark:from-slate-900 dark:to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center">
-            <Badge variant="secondary" className="mb-6">
+            <Badge variant="secondary" className="mb-6 dark:bg-slate-800 dark:text-white">
               Portfolio
             </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] dark:text-white mb-6">
               Hasil Kerja{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">
                 yang Membanggakan
               </span>
             </h1>
-            <p className="text-xl text-[#64748B] max-w-3xl mx-auto">
+            <p className="text-xl text-[#64748B] dark:text-slate-400 max-w-3xl mx-auto">
               Eksplorasi berbagai proyek successful yang telah kami kerjakan untuk klien dari berbagai industri dan kategori bisnis
             </p>
           </AnimatedSection>
@@ -43,7 +43,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Filter & Projects */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section className="py-20 lg:py-32 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter */}
           <AnimatedSection className="mb-12">
@@ -53,7 +53,11 @@ export default function PortfolioPage() {
                   key={category}
                   variant={activeCategory === category ? "default" : "outline"}
                   onClick={() => setActiveCategory(category)}
-                  className="rounded-full"
+                  className={`rounded-full transition-all duration-200 ${
+                    activeCategory === category
+                      ? "dark:bg-[#2563EB] dark:text-white dark:hover:bg-blue-700"
+                      : "dark:bg-slate-800 dark:border-slate-600 dark:text-white dark:hover:bg-slate-700"
+                  }`}
                 >
                   {category}
                 </Button>
@@ -65,7 +69,7 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project, index) => (
               <AnimatedSection key={project.id} delay={index * 100}>
-                <Card className="overflow-hidden group">
+                <Card className="overflow-hidden group dark:bg-slate-800 dark:border-slate-700">
                   <CardContent className="p-0">
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <Image
@@ -87,9 +91,8 @@ export default function PortfolioPage() {
                           ))}
                         </div>
                         <Button
-                          variant="accent"
                           size="sm"
-                          className="bg-white text-[#0F172A] hover:bg-[#F8FAFC]"
+                          className="bg-white text-[#0F172A] hover:bg-[#F8FAFC] dark:bg-slate-100 dark:hover:bg-white"
                           asChild
                         >
                           <Link href={project.link || "#"} target="_blank">
@@ -100,13 +103,13 @@ export default function PortfolioPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <Badge variant="outline" className="mb-3">
+                      <Badge variant="outline" className="mb-3 dark:border-slate-600 dark:text-slate-300">
                         {project.category}
                       </Badge>
-                      <h3 className="text-lg font-semibold text-[#0F172A] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
+                      <h3 className="text-lg font-semibold text-[#0F172A] dark:text-white mb-2 group-hover:text-[#2563EB] dark:group-hover:text-blue-400 transition-colors duration-200">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-[#64748B] line-clamp-2">
+                      <p className="text-sm text-[#64748B] dark:text-slate-400 line-clamp-2">
                         {project.description}
                       </p>
                     </div>
@@ -119,19 +122,18 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-[#F8FAFC]">
+      <section className="py-20 lg:py-32 bg-[#F8FAFC] dark:bg-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] dark:text-white mb-6">
               Ingin Seperti Mereka?
             </h2>
-            <p className="text-xl text-[#64748B] mb-8">
+            <p className="text-xl text-[#64748B] dark:text-slate-400 mb-8">
               Mulaiwujudkan website impian Anda bersama tim profesional kami. Konsultasi gratis!
             </p>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="dark:bg-[#2563EB] dark:text-white dark:hover:bg-blue-700">
               <Link href="/contact">
                 Mulai Project Anda
-                <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </Button>
           </AnimatedSection>

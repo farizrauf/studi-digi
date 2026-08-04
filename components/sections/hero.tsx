@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -21,7 +21,7 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <Badge variant="secondary" className="mb-6 inline-flex items-center gap-2 dark:bg-slate-800">
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#2563EB] dark:text-blue-400" />
               <span className="text-[#2563EB] dark:text-blue-400 font-medium">Digital Agency Terpercaya</span>
             </Badge>
 
@@ -40,19 +40,19 @@ export function HeroSection() {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mb-10">
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 dark:bg-[#2563EB]/20 flex items-center justify-center">
-                  <Check className="w-5 h-5 text-[#2563EB]" />
+                  <Check className="w-5 h-5 text-[#2563EB] dark:text-blue-400" />
                 </div>
                 <span className="text-sm text-[#64748B] dark:text-slate-400">100+ Proyek</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/10 dark:bg-[#06B6D4]/20 flex items-center justify-center">
-                  <Check className="w-5 h-5 text-[#06B6D4]" />
+                  <Check className="w-5 h-5 text-[#06B6D4] dark:text-cyan-400" />
                 </div>
                 <span className="text-sm text-[#64748B] dark:text-slate-400">98% Klien Puas</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 rounded-lg bg-green-500/10 dark:bg-green-500/20 flex items-center justify-center">
-                  <Check className="w-5 h-5 text-green-500" />
+                  <Check className="w-5 h-5 text-green-500 dark:text-green-400" />
                 </div>
                 <span className="text-sm text-[#64748B] dark:text-slate-400">Support 24/7</span>
               </div>
@@ -63,7 +63,6 @@ export function HeroSection() {
               <Button asChild size="xl" className="w-full sm:w-auto">
                 <Link href="/contact">
                   Konsultasi Gratis
-                  <ArrowRight className="w-5 h-5 ml-1" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="xl" className="w-full sm:w-auto dark:bg-slate-800 dark:border-slate-700 dark:text-white dark:hover:bg-slate-700">
@@ -88,8 +87,8 @@ export function HeroSection() {
             {/* Floating Cards */}
             <div className="absolute -top-4 -left-4 sm:-left-8 bg-white dark:bg-slate-800 rounded-xl p-4 shadow-xl shadow-[#2563EB]/10 animate-float">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                  <span className="text-green-500 font-bold">+40%</span>
+                <div className="w-10 h-10 rounded-lg bg-green-500/10 dark:bg-green-500/20 flex items-center justify-center">
+                  <span className="text-green-500 dark:text-green-400 font-bold">+40%</span>
                 </div>
                 <div>
                   <p className="text-xs text-[#64748B] dark:text-slate-400">Peningkatan</p>
@@ -99,8 +98,8 @@ export function HeroSection() {
             </div>
             <div className="absolute -bottom-4 -right-4 sm:-right-8 bg-white dark:bg-slate-800 rounded-xl p-4 shadow-xl shadow-[#06B6D4]/10 animate-float-delayed">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center">
-                  <span className="text-[#2563EB] font-bold">100</span>
+                <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 dark:bg-[#2563EB]/20 flex items-center justify-center">
+                  <span className="text-[#2563EB] dark:text-blue-400 font-bold">100</span>
                 </div>
                 <div>
                   <p className="text-xs text-[#64748B] dark:text-slate-400">Skor</p>

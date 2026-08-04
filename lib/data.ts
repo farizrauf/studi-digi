@@ -418,17 +418,17 @@ export const navigationItems = [
 ];
 
 export const siteConfig = {
-  name: "StudioDigital",
+  name: "Studio Digi",
   description: "Website Profesional untuk UMKM, Restoran & Bisnis Anda. Kami membantu bisnis berkembang dengan website modern, cepat, dan SEO friendly.",
-  url: "https://studiodigital.id",
+  url: "https://studiodigi.id",
   ogImage: "/og-image.jpg",
   phone: "+62895328976768",
   email: "farizabdulr@gmail.com",
   address: "Jakarta Selatan, Indonesia",
   businessHours: "Senin - Jumat: 09:00 - 18:00 WIB",
   socialLinks: {
-    instagram: "https://instagram.com/studiodigital.id",
-    facebook: "https://facebook.com/studiodigital.id",
+    instagram: "https://instagram.com/studiodigi.id",
+    facebook: "https://facebook.com/studiodigi.id",
     linkedin: "https://www.linkedin.com/in/farizrauf/"
   }
 };

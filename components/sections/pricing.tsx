@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -12,19 +12,19 @@ import { formatCurrency } from "@/lib/utils";
 
 export function PricingSection() {
   return (
-    <section className="py-20 lg:py-32 bg-[#F8FAFC]">
+    <section className="py-20 lg:py-32 bg-[#F8FAFC] dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4">
+          <Badge variant="secondary" className="mb-4 dark:bg-slate-800 dark:text-white">
             Harga
           </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-6">
-            Pilihan Harga yang{" "}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] dark:text-white mb-6">
+            Harga yang{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">
               Transparan
             </span>
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#64748B] dark:text-slate-400 max-w-2xl mx-auto">
             Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Semua paket sudah termasuk fitur essential
           </p>
         </AnimatedSection>
@@ -35,32 +35,33 @@ export function PricingSection() {
               <Card
                 className={`h-full relative ${
                   plan.highlighted
-                    ? "border-[#2563EB] shadow-xl shadow-[#2563EB]/10 scale-105"
-                    : "hover:shadow-lg"
-                } transition-all duration-300`}
+                    ? "border-[#2563EB] shadow-xl shadow-[#2563EB]/10 md:scale-105 dark:border-[#2563EB]"
+                    : "hover:shadow-lg dark:border-slate-700"
+                } transition-all duration-300 dark:bg-slate-800`}
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-[#2563EB] text-white px-4 py-1">
+                    <Badge className="bg-[#2563EB] text-white px-4 py-1 flex items-center gap-1">
+                      <Sparkles className="w-3 h-3" />
                       Populer
                     </Badge>
                   </div>
                 )}
                 <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  <CardDescription className="mt-2">{plan.description}</CardDescription>
+                  <CardTitle className="text-2xl dark:text-white">{plan.name}</CardTitle>
+                  <CardDescription className="mt-2 text-[#64748B] dark:text-slate-400">{plan.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="text-center pb-4">
                   {plan.price === "Hubungi Kami" ? (
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-[#0F172A]">Custom</span>
+                      <span className="text-3xl font-bold text-[#0F172A] dark:text-white">Custom</span>
                     </div>
                   ) : (
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-[#0F172A]">
+                      <span className="text-3xl font-bold text-[#0F172A] dark:text-white">
                         {formatCurrency(parseInt(plan.price))}
                       </span>
-                      <span className="text-[#64748B]">/proyek</span>
+                      <span className="text-[#64748B] dark:text-slate-400">/proyek</span>
                     </div>
                   )}
                 </CardContent>
@@ -68,8 +69,8 @@ export function PricingSection() {
                   <ul className="space-y-3">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start text-sm">
-                        <Check className="w-5 h-5 text-[#2563EB] mr-3 flex-shrink-0 mt-0.5" />
-                        <span className="text-[#64748B]">{feature}</span>
+                        <Check className="w-5 h-5 text-[#2563EB] dark:text-blue-400 mr-3 flex-shrink-0 mt-0.5" />
+                        <span className="text-[#64748B] dark:text-slate-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -78,11 +79,10 @@ export function PricingSection() {
                   <Button
                     asChild
                     variant={plan.highlighted ? "default" : "outline"}
-                    className="w-full"
+                    className="w-full dark:border-slate-600 dark:text-white"
                   >
                     <Link href={plan.buttonLink}>
                       {plan.buttonText}
-                      <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </Button>
                 </CardFooter>
@@ -92,9 +92,9 @@ export function PricingSection() {
         </div>
 
         <AnimatedSection className="text-center mt-12">
-          <p className="text-[#64748B]">
+          <p className="text-[#64748B] dark:text-slate-400">
             Butuh solusi custom?{" "}
-            <Link href="/contact" className="text-[#2563EB] font-medium hover:underline">
+            <Link href="/contact" className="text-[#2563EB] dark:text-blue-400 font-medium hover:underline">
               Hubungi kami
             </Link>{" "}
             untuk diskusi lebih lanjut

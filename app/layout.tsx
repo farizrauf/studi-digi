@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} - Website Profesional untuk UMKM & Bisnis`,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@studiodigital",
+    creator: "@studiodigi",
   },
   robots: {
     index: true,

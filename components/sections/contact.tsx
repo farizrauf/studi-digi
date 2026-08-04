@@ -42,10 +42,11 @@ export function ContactSection() {
           </p>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        {/* Top Row - Form and Quick Contact with more spacing */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-8">
           {/* Contact Form */}
           <AnimatedSection direction="left">
-            <Card className="dark:bg-slate-800 dark:border-slate-700">
+            <Card className="h-full min-h-[600px] lg:min-h-[700px] dark:bg-slate-800 dark:border-slate-700 rounded-2xl">
               <CardContent className="p-6 lg:p-8">
                 <h3 className="text-2xl font-semibold text-[#0F172A] dark:text-white mb-6">
                   Kirim Pesan
@@ -92,12 +93,12 @@ export function ContactSection() {
                       value={formData.service}
                       onValueChange={(value) => setFormData({ ...formData, service: value })}
                     >
-                      <SelectTrigger className="dark:bg-slate-700 dark:border-slate-600 dark:text-white">
+                      <SelectTrigger className="w-full">
                         <SelectValue placeholder="Pilih layanan" />
                       </SelectTrigger>
-                      <SelectContent className="dark:bg-slate-800 dark:border-slate-700">
+                      <SelectContent>
                         {services.map((service) => (
-                          <SelectItem key={service.title} value={service.title} className="dark:text-white">
+                          <SelectItem key={service.title} value={service.title}>
                             {service.title}
                           </SelectItem>
                         ))}
@@ -111,7 +112,7 @@ export function ContactSection() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
                   />
-                  <Button type="submit" className="w-full" size="lg">
+                  <Button type="submit" className="w-full dark:bg-[#2563EB] dark:text-white dark:hover:bg-blue-700" size="lg">
                     <Send className="w-5 h-5 mr-2" />
                     Kirim via WhatsApp
                   </Button>
@@ -120,77 +121,77 @@ export function ContactSection() {
             </Card>
           </AnimatedSection>
 
-          {/* Contact Info */}
-          <AnimatedSection direction="right" className="space-y-6">
-            {/* Quick Contact */}
-            <Card className="dark:bg-slate-800 dark:border-slate-700">
-              <CardContent className="p-6 lg:p-8">
-                <h3 className="text-xl font-semibold text-[#0F172A] dark:text-white mb-5">
-                  Hubungi Kami Langsung
-                </h3>
-                <div className="space-y-4">
-                  <a
-                    href={`https://wa.me/${siteConfig.phone.replace("+", "")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors duration-200 group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">
-                      <MessageCircle className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#0F172A] dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
-                        WhatsApp
-                      </p>
-                      <p className="text-[#64748B] dark:text-slate-400">{siteConfig.phone}</p>
-                    </div>
-                  </a>
+          {/* Quick Contact and Office Info */}
+          <AnimatedSection direction="right">
+            <div className="space-y-6">
+              {/* Quick Contact */}
+              <Card className="dark:bg-slate-800 dark:border-slate-700 rounded-2xl">
+                <CardContent className="p-6 lg:p-8">
+                  <h3 className="text-xl font-semibold text-[#0F172A] dark:text-white mb-5">
+                    Hubungi Kami Langsung
+                  </h3>
+                  <div className="space-y-4">
+                    <a
+                      href={`https://wa.me/${siteConfig.phone.replace("+", "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-xl bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors duration-200 group"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">
+                        <MessageCircle className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-[#0F172A] dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                          WhatsApp
+                        </p>
+                        <p className="text-[#64748B] dark:text-slate-400">{siteConfig.phone}</p>
+                      </div>
+                    </a>
 
-                  <a
-                    href={`mailto:${siteConfig.email}`}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-200 group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-[#2563EB] flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#0F172A] dark:text-white group-hover:text-[#2563EB] dark:group-hover:text-blue-400 transition-colors">
-                        Email
-                      </p>
-                      <p className="text-[#64748B] dark:text-slate-400">{siteConfig.email}</p>
-                    </div>
-                  </a>
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="flex items-center gap-4 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-200 group"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-[#2563EB] flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-[#0F172A] dark:text-white group-hover:text-[#2563EB] dark:group-hover:text-blue-400 transition-colors">
+                          Email
+                        </p>
+                        <p className="text-[#64748B] dark:text-slate-400">{siteConfig.email}</p>
+                      </div>
+                    </a>
 
-                  <a
-                    href={siteConfig.socialLinks.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-sky-50 dark:bg-sky-900/20 hover:bg-sky-100 dark:hover:bg-sky-900/30 transition-colors duration-200 group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-[#0A66C2] flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#0F172A] dark:text-white group-hover:text-[#0A66C2] dark:group-hover:text-sky-400 transition-colors">
-                        LinkedIn
-                      </p>
-                      <p className="text-[#64748B] dark:text-slate-400">Fariz Abdul Rauf</p>
-                    </div>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+                    <a
+                      href={siteConfig.socialLinks.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-xl bg-sky-50 dark:bg-sky-900/20 hover:bg-sky-100 dark:hover:bg-sky-900/30 transition-colors duration-200 group"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-[#0A66C2] flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="font-medium text-[#0F172A] dark:text-white group-hover:text-[#0A66C2] dark:group-hover:text-sky-400 transition-colors">
+                          LinkedIn
+                        </p>
+                        <p className="text-[#64748B] dark:text-slate-400">Fariz Abdul Rauf</p>
+                      </div>
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
 
-            {/* Office Info & Map */}
-            <Card className="dark:bg-slate-800 dark:border-slate-700 overflow-hidden">
-              <CardContent className="p-0">
-                <div className="p-6 lg:p-8">
-                  <div className="space-y-4 mb-4">
+              {/* Office Info */}
+              <Card className="dark:bg-slate-800 dark:border-slate-700 rounded-2xl">
+                <CardContent className="p-6 lg:p-8">
+                  <div className="space-y-4">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 dark:bg-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-[#2563EB]" />
+                        <MapPin className="w-5 h-5 text-[#2563EB] dark:text-blue-400" />
                       </div>
                       <div>
                         <p className="font-medium text-[#0F172A] dark:text-white mb-1">Alamat</p>
@@ -200,7 +201,7 @@ export function ContactSection() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/10 dark:bg-[#06B6D4]/20 flex items-center justify-center flex-shrink-0">
-                        <Clock className="w-5 h-5 text-[#06B6D4]" />
+                        <Clock className="w-5 h-5 text-[#06B6D4] dark:text-cyan-400" />
                       </div>
                       <div>
                         <p className="font-medium text-[#0F172A] dark:text-white mb-1">Jam Operasional</p>
@@ -208,26 +209,32 @@ export function ContactSection() {
                       </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Google Maps Embed */}
-                <div className="w-full h-64 lg:h-72">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.56253942854!2d106.68943162822967!3d-6.229728100524568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b109%3A0x6df2c20b5a1a3e3a!2sJakarta%20Selatan%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1699000000000!5m2!1sid!2sid"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="StudioDigital Location"
-                    className="grayscale-[50%] dark:grayscale-[80%]"
-                  />
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </AnimatedSection>
         </div>
+
+        {/* Map - Full Width with rounded corners */}
+        <AnimatedSection>
+          <Card className="dark:bg-slate-800 dark:border-slate-700 overflow-hidden rounded-2xl">
+            <CardContent className="p-0">
+              <div className="w-full h-80 lg:h-96">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.56253942854!2d106.68943162822967!3d-6.229728100524568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b109%3A0x6df2c20b5a1a3e3a!2sJakarta%20Selatan%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1699000000000!5m2!1sid!2sid"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="StudioDigital Location"
+                  className="grayscale-[50%] dark:grayscale-[80%]"
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedSection>
       </div>
     </section>
   );

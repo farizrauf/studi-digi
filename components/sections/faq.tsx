@@ -1,8 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -35,7 +33,7 @@ export function FAQSection() {
                 <AccordionTrigger className="text-left text-[#0F172A] dark:text-white hover:text-[#2563EB] dark:hover:text-blue-400">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-[#64748B] dark:text-slate-400 leading-relaxed">
+                <AccordionContent className="text-[#64748B] dark:text-slate-300 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -48,10 +46,9 @@ export function FAQSection() {
             Tidak menemukan jawaban yang Anda cari?
           </p>
           <Button asChild>
-            <Link href="/contact">
+            <a href="/contact">
               Hubungi Kami
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
+            </a>
           </Button>
         </AnimatedSection>
       </div>

@@ -2,11 +2,11 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/ui/animated-section";
+import { ContactSection } from "@/components/sections/contact";
 import { services } from "@/lib/data";
 
 export function ServicesSection() {
@@ -56,10 +56,9 @@ export function ServicesSection() {
         </div>
 
         <AnimatedSection className="text-center">
-          <Button asChild size="lg">
+          <Button asChild size="lg" className="dark:bg-[#2563EB] dark:text-white dark:hover:bg-blue-700">
             <Link href="/services">
               Lihat Semua Layanan
-              <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </Button>
         </AnimatedSection>

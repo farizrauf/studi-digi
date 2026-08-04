@@ -18,10 +18,13 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1E3A8A] flex items-center justify-center shadow-md">
+                <span className="text-white font-extrabold text-sm tracking-tight leading-none">SD</span>
               </div>
-              <span className="text-xl font-bold">{siteConfig.name}</span>
+              <span className="text-xl font-bold">
+                <span className="text-white">studio</span>{" "}
+                <span className="text-[#2563EB]">digi</span>
+              </span>
             </Link>
             <p className="text-[#94A3B8] text-sm leading-relaxed mb-6">
               Kami membantu bisnis berkembang dengan website modern, cepat, SEO friendly, dan siap menghasilkan lebih banyak pelanggan.
